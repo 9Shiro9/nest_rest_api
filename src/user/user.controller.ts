@@ -6,9 +6,8 @@ import { Request } from 'express';
 export class UserController {
     @UseGuards(AuthGuard('jwt'))
     @Get('me')
-    getMe(@Req() Req : Request){
-        console.log(Req.user);
-        return "user"
+    getMe(@Req() req : Request){
+        console.log(req.user);
+        return req.user
     }
-
 }
